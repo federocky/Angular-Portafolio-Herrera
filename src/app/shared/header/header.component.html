@@ -16,7 +16,7 @@
 
     <div class="ae-container-fluid rk-topbar">
 
-      <h1 class="rk-logo"><a routerLink="home">Federico´s Portfolio<sup>tm</sup></a></h1>
+      <h1 class="rk-logo"><a routerLink="home">{{ _servicio.info.titulo}} Portfolio<sup>tm</sup></a></h1>
       <nav class="rk-navigation">
 
         <ul class="rk-menu">
@@ -27,14 +27,21 @@
           </li>
 
         </ul>
-        <form class="rk-search">
-          <input type="text" placeholder="Search" id="urku-search" class="rk-search-field">
+        <div class="rk-search">
+
+          <input type="text" 
+            #txtBuscar
+            (keyup.enter)="buscarProducto(txtBuscar.value)"
+            placeholder="Buscar..." id="urku-search" class="rk-search-field">
+
           <label for="urku-search">
             <svg>
               <use xlink:href="assets/img/symbols.svg#icon-search"></use>
             </svg>
           </label>
-        </form>
+
+        </div>
+
       </nav>
 
 
